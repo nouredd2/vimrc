@@ -60,12 +60,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" vim latexsuite
-Plugin 'gmarik/Vundle.vim'
-
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'chazy/cscope_maps'
 
 
 " linux kernel style formatting
