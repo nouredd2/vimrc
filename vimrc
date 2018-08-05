@@ -61,10 +61,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " simply fold
-" Plugin 'tmhedberg/SimpylFold'
+Plugin 'tmhedberg/SimpylFold'
 
 " for Python indentation
-" Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-scripts/indentpython.vim'
 
 " linux kernel style formatting
 Plugin 'vivien/vim-linux-coding-style'
