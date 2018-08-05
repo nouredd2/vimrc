@@ -1,8 +1,8 @@
 "" basic settings
 set number
 set smartindent
-set shiftwidth=8
-set tabstop=8
+set shiftwidth=4
+set tabstop=4
 set expandtab
 
 set ignorecase
@@ -59,6 +59,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" vim latexsuite
+"Plugin 'vim-latex/vim-latex'
 
 " simply fold
 Plugin 'tmhedberg/SimpylFold'
@@ -123,10 +126,29 @@ au BufNewFile,BufRead *.md
 " custom latex command to insert comments at the start of each line
 command! -range TexComment <line1>,<line2> s/^/%
 
-" map c-q to :ccl to close the quickfix view
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <leader>b <Plug>(go-build)
+" for easy manipulation of the error windows
+" reenable these for go development
+"autocmd FileType go nmap <leader>t <Plug>(go-test)
+"autocmd FileType go nmap <leader>b <Plug>(go-build)
 map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
+map <C-m> :cprev<CR>
 nnoremap <leader>a :cclose<CR>
 nnoremap <leader>q :pc<CR>
+
+" for easy comments
+autocmd FileType tex map <buffer> <leader>z :TexComment<CR>
+
+"" various easy mappings
+
+"jk for normal model when in edit
+inoremap jk <ESC>
+
+" remove arrows
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
