@@ -60,13 +60,17 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
+" simply fold
+" Plugin 'tmhedberg/SimpylFold'
 
+" for Python indentation
+" Plugin 'vim-scripts/indentpython.vim'
 
 " linux kernel style formatting
 Plugin 'vivien/vim-linux-coding-style'
-Plugin 'fatih/vim-go'
+
+" for go development
+" Plugin 'fatih/vim-go'
 
 " cscope maps
 Plugin 'chazy/cscope_maps'
