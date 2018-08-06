@@ -11,6 +11,10 @@ set incsearch
 set showmatch
 set hlsearch
 
+" fix split to go to the bottom and the right
+set splitright
+set splitbelow
+
 " to remove highlights
 nnoremap <leader><space> :noh<cr>
 
