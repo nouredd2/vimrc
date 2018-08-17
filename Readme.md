@@ -7,7 +7,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Put the `vimrc` file in your home directory
 ```
-mv vimrc ~/.vimrc
+cp vimrc ~/.vimrc
 ```
 
 Launch vim and install the plugins (make sure you have selected which ones you want to enable/disable).
