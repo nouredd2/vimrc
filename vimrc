@@ -89,7 +89,10 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/goyo.vim'
 
 " support for github markdown
-Plugin 'gabrielelana/vim-markdown'
+" Plugin 'gabrielelana/vim-markdown'
+
+" imporoved syntax
+Plugin 'sheerun/vim-polyglot'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -120,7 +123,8 @@ au BufNewFile,BufRead *.py
 " turn on spell checking when editing .tex files
 au BufNewFile,BufRead *.tex
 	  \ set spell spelllang=en_us |
-	  \ set textwidth=100
+	  \ set textwidth=100 |
+      \ syntax spell toplevel
 
 " turn on spell checking and limit linewidth when editing .md files
 au BufNewFile,BufRead *.md
