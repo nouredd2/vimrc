@@ -89,7 +89,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'junegunn/goyo.vim'
 
 " support for github markdown
-" Plugin 'gabrielelana/vim-markdown'
+Plugin 'gabrielelana/vim-markdown'
 
 " imporoved syntax
 Plugin 'sheerun/vim-polyglot'
@@ -97,6 +97,10 @@ Plugin 'sheerun/vim-polyglot'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" Use vim-markdown instead of polyglot's one
+" Same for latex suite
+let g:polyglot_disabled = ['markdown', 'latex']
 
 " Edit the way C/C++ indentation works according
 " to a chose style. I am following the style guidelines
