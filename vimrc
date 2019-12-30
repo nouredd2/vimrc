@@ -98,6 +98,24 @@ Plugin 'tmux-plugins/vim-tmux'
 " plugin for commenting out lines
 Plugin 'tpope/vim-commentary'
 
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+
+" cmake building
+Plugin 'vhdirk/vim-cmake'
+
+" p4
+Plugin 'rightson/vim-p4-syntax'
+
+" easy align
+Plugin 'junegunn/vim-easy-align'
+
+" ack.vim
+Plugin 'mileszs/ack.vim'
+
+" buff explorer
+Plugin 'jlanzarotta/bufexplorer'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -147,9 +165,6 @@ au BufNewFile,BufRead *.md
 au BufNewFile,BufRead *.go
     \ set textwidth=100
 
-" custom latex command to insert comments at the start of each line
-command! -range TexComment <line1>,<line2> s/^/%
-
 " for easy manipulation of the error windows
 " reenable these for go development
 autocmd FileType go nmap <leader>t <Plug>(go-test)
@@ -161,13 +176,17 @@ map <C-m> :cprev<CR>
 nnoremap <leader>a :cclose<CR>
 nnoremap <leader>q :pc<CR>
 
-" for easy comments
-autocmd FileType tex map <buffer> <leader>z :TexComment<CR>
+" NERDTreeToggle shortcut
+map <leader>z :NERDTreeToggle<CR>
+
+au FileType cpp map <leader>c :make -j4<CR><CR><CR>
 
 " change the colorscheme
-colorscheme dracula
+colorscheme darkblack
 
 "" various easy mappings
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 "jk for normal model when in edit
 inoremap jk <ESC>
@@ -183,3 +202,6 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 let python_highlight_all = 1
+
+" fix the commenting for cpp files
+autocmd FileType cpp setlocal commentstring=//%s
