@@ -111,6 +111,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'junegunn/limelight.vim'
 Plugin 'junegunn/goyo.vim'
 
+" better vim greo
+Plugin 'mhinz/vim-grepper'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
