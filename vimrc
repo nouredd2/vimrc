@@ -65,7 +65,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " vim latexsuite
-Plugin 'vim-latex/vim-latex'
+" Plugin 'vim-latex/vim-latex'
 
 " simply fold
 Plugin 'tmhedberg/SimpylFold'
@@ -107,12 +107,12 @@ Plugin 'cespare/vim-toml'
 " vim surron
 Plugin 'tpope/vim-surround'
 
+" vim repeat
+Plugin 'tpope/vim-repeat'
+
 " distraction free writing
 Plugin 'junegunn/limelight.vim'
-Plugin 'junegunn/goyo.vim'
-
-" better vim greo
-Plugin 'mhinz/vim-grepper'
+" Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -217,3 +217,4 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 let python_highlight_all = 1
+
