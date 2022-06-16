@@ -14,7 +14,6 @@ set hlsearch
 " fix split to go to the bottom and the right
 set splitright
 set splitbelow
-
 " to remove highlights
 nnoremap <leader><space> :noh<cr>
 
@@ -90,7 +89,8 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'gabrielelana/vim-markdown'
 
 " dracula colorscheme
-Plugin 'flazz/vim-colorschemes'
+" Plugin 'flazz/vim-colorschemes'
+Plugin 'rafi/awesome-vim-colorschemes'
 
 " vim plugin for tmux source files editing
 Plugin 'tmux-plugins/vim-tmux'
@@ -112,7 +112,25 @@ Plugin 'tpope/vim-repeat'
 
 " distraction free writing
 Plugin 'junegunn/limelight.vim'
-" Plugin 'junegunn/goyo.vim'
+
+" vim-one colorscheme
+Plugin 'rakr/vim-one'
+
+" markdown toc generation
+Plugin 'mzlogin/vim-markdown-toc'
+
+" solarized color scheme
+Plugin 'altercation/vim-colors-solarized'
+
+" easy f motions
+Plugin  'rhysd/clever-f.vim'
+
+" editor config
+Plugin 'editorconfig/editorconfig-vim'
+
+" completor
+Plugin 'maralla/completor.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -148,7 +166,7 @@ au BufNewFile,BufRead *.py
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4  |
-    \ set textwidth=79  |
+    \ set textwidth=80  |
     \ set expandtab     |
     \ set autoindent    |
     \ set fileformat=unix
@@ -162,21 +180,14 @@ au BufNewFile,BufRead *.tex
 " turn on spell checking and limit linewidth when editing .md files
 au BufNewFile,BufRead *.md
     \ set spell spelllang=en_us |
-    \ set textwidth=100
+    \ set textwidth=80
 
 " set the textwidth for go programs
 au BufNewFile,BufRead *.go
-    \ set textwidth=100
-
-" custom latex command to insert comments at the start of each line
-command! -range TexComment <line1>,<line2> s/^/%
+    \ set textwidth=80
 
 " for easy manipulation of the error windows
 " reenable these for go development
-autocmd FileType go nmap <leader>t <Plug>(go-test)
-autocmd FileType go nmap <leader>d <Plug>(go-doc)
-autocmd FileType go nmap <leader>b <Plug>(go-build)
-autocmd FileType go nmap <leader>r <Plug>(go-run)
 map <C-n> :cnext<CR>
 map <C-m> :cprev<CR>
 nnoremap <leader>a :cclose<CR>
@@ -187,7 +198,8 @@ autocmd FileType tex map <leader>c :!make<CR><CR>
 autocmd FileType tex map <leader>v :!make view<CR><CR>
 
 " change the colorscheme
-colorscheme late_evening
+set background=dark
+colorscheme gruvbox
 
 " toggle the nerdtree
 map <leader>z :NERDTreeToggle<CR>
@@ -196,9 +208,21 @@ map <leader>z :NERDTreeToggle<CR>
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
 
-" Goyo config
-let g:goyo_width = 120
-let g:goyo_linenr = 1
+" completor config
+let g:completor_clang_binary = '/usr/bin/clang'
+
+" dts is short for a datetimestamp
+iab <expr> dts strftime("%c")
+
+
+" try to set a colorcolumn
+set colorcolumn=81
+highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+
+" set tab to fill in completion for completor
+" Use `tab` key to select completions.  Default is arrow keys.
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 
 "" various easy mappings
