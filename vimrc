@@ -64,7 +64,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " vim latexsuite
-" Plugin 'vim-latex/vim-latex'
+Plugin 'vim-latex/vim-latex'
 
 " simply fold
 Plugin 'tmhedberg/SimpylFold'
@@ -75,6 +75,9 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 
 " linux kernel style formatting
 Plugin 'vivien/vim-linux-coding-style'
+
+" tabular.vim to align things in tables
+Plugin 'godlygeek/tabular'
 
 " for go development
 " Plugin 'fatih/vim-go'
@@ -101,26 +104,17 @@ Plugin 'tpope/vim-commentary'
 " nerd tree
 Plugin 'scrooloose/nerdtree'
 
-" toms
-Plugin 'cespare/vim-toml'
-
 " vim surron
 Plugin 'tpope/vim-surround'
 
 " vim repeat
 Plugin 'tpope/vim-repeat'
 
-" distraction free writing
-Plugin 'junegunn/limelight.vim'
-
 " vim-one colorscheme
 Plugin 'rakr/vim-one'
 
 " markdown toc generation
 Plugin 'mzlogin/vim-markdown-toc'
-
-" solarized color scheme
-Plugin 'altercation/vim-colors-solarized'
 
 " easy f motions
 Plugin  'rhysd/clever-f.vim'
@@ -130,6 +124,9 @@ Plugin 'editorconfig/editorconfig-vim'
 
 " completor
 Plugin 'maralla/completor.vim'
+
+" emojis?
+Plugin 'junegunn/vim-emoji'
 
 
 " All of your Plugins must be added before the following line
@@ -204,6 +201,9 @@ colorscheme gruvbox
 " toggle the nerdtree
 map <leader>z :NERDTreeToggle<CR>
 
+" leader use for the emoji replacement
+map <leader>j :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
+
 " limelight config
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
@@ -224,6 +224,8 @@ highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" emoji complete function
+set completefunc=emoji#complete
 
 "" various easy mappings
 
